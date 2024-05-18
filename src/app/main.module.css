@@ -21,28 +21,13 @@
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 /* Mobile */
 @media (max-width: 700px) {
   .grid {
     grid-template-columns: repeat(1, 100%);
-  }
-}
-
-/* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
-  .grid {
-    grid-template-columns: repeat(2, 50%);
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
+    gap: 2rem;
   }
 }

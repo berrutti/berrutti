@@ -2,9 +2,9 @@ import React from "react";
 import Link from "next/link";
 import styles from "./music.module.css";
 
-
 const Music = () => {
   const tracks = [
+    "https://api.soundcloud.com/tracks/1814529540",
     "https://api.soundcloud.com/tracks/1764862005",
     "https://api.soundcloud.com/tracks/1723716168",
     "https://api.soundcloud.com/tracks/1743720393",
