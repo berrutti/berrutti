@@ -7,7 +7,7 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.center}>
         <Image
-          src="/logo.webp"
+          src="/logo.png"
           alt="berrutti"
           width={1024}
           height={1024}
@@ -16,17 +16,17 @@ export default function Home() {
       </div>
 
       <div className={styles.grid}>
-        <Link href="/music" className={styles.card}>
-          <h2>Music</h2>
-        </Link>
+        <a href="https://soundcloud.com/berrutti" target="_blank" rel="noopener noreferrer" className={styles.card}>
+          <h2>music</h2>
+        </a>
 
         <Link href="/texts" className={styles.card}>
-          <h2>Texts</h2>
+          <h2>texts</h2>
         </Link>
 
-        <Link href="/contact" className={styles.card}>
-          <h2>Contact</h2>
-        </Link>
+        <a href="mailto:berrutti@gmail.com" className={styles.card}>
+          <h2>contact</h2>
+        </a>
       </div>
     </main>
   );

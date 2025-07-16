@@ -1,0 +1,109 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+}
+
+.container h1 {
+  margin: 0 0 3rem 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-gold);
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.post {
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+}
+
+.post:hover {
+  transform: scale(1.02) rotate(1deg);
+}
+
+.post:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(212, 165, 116, 0.1);
+  z-index: 0;
+}
+
+.post a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  z-index: 1;
+}
+
+.post h2 {
+  margin: 0 0 0.25rem 0;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.post:hover h2 {
+  color: var(--primary-gold);
+}
+
+.date {
+  color: #888;
+  font-size: 0.8rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.preview {
+  color: var(--text-dark);
+  margin: 0;
+  font-size: 1rem;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 3rem;
+  padding: 1rem 0;
+  text-decoration: none;
+  color: var(--primary-gold);
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.back:hover {
+  transform: scale(1.1) rotate(1deg);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+  
+  .container h1 {
+    font-size: 2rem;
+  }
+  
+  .post {
+    padding: 1.5rem;
+  }
+  
+  .post h2 {
+    font-size: 1.5rem;
+  }
+  
+  .back {
+    font-size: 1.5rem;
+  }
+} 
