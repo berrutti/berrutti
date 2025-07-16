@@ -1,5 +1,7 @@
 ### mati berrutti
 
+https://berrutti.github.io/berrutti
+
 experiments:
 [Trippy vids](https://berrutti.github.io/trippy-vids/)
 
