@@ -1,0 +1,26 @@
+{
+  "name": "hackers-blog",
+  "version": "1.0.0",
+  "description": "A minimal blog built with web components - zero runtime dependencies",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "serve . -p 8000",
+    "serve": "serve . -p 8000",
+    "generate": "node scripts/generate.js",
+    "generate-rss": "node scripts/generate.js",
+    "build": "npm run generate"
+  },
+  "devDependencies": {
+    "glob": "^10.3.10",
+    "serve": "^14.2.3"
+  },
+  "keywords": [
+    "blog",
+    "web-components",
+    "minimal",
+    "static-site"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
