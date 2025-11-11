@@ -1,0 +1,41 @@
+name: Generate Blog Files
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'posts/**/*.html'
+      - 'scripts/generate.js'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Generate RSS and archive
+        run: yarn generate
+
+      - name: Commit generated files
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add rss.xml archive.html
+          git diff --staged --quiet || git commit -m "Update RSS feed and archive [skip ci]"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}

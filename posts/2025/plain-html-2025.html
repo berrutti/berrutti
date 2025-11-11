@@ -34,7 +34,7 @@
             When I started learning to code in high school many years ago,
             programming a computer meant writing magic words in English (at the
             time, we used Turbo Pascal) and reading its output on a terminal. It
-            was also very obscurem, you couldn't really see much of what your
+            was also very obscure, you couldn't really see much of what your
             program was doing unless you took the time to actually build a UI
             for it, which was very cumbersome.
           </p>
@@ -67,16 +67,16 @@
             you're on 4G or 5G, the internet is just plain useless.
           </p>
           <p>
-            I created this blog precisely because of that — as my own capsule of
+            I created this blog precisely because of that, as my own capsule of
             minimalism in a world of social media feeds and algorithmic content
             distribution. This blog should be readable on a very bad internet
             connection and without JavaScript. Even if you block CSS files, the
             content itself should remain perfectly readable.
           </p>
           <p>
-            In a world obsessed with JavaScript frameworks, I've found that
-            plain HTML still delivers a great user experience for
-            content-focused websites. For a number of reasons:
+            In a world obsessed with JavaScript frameworks, plain HTML still
+            delivers the best user experience for content-focused websites. For
+            a number of reasons:
           </p>
           <p>
             First, <strong>performance</strong>. A static HTML page loads
@@ -105,6 +105,31 @@
             competes with Vue, Svelte, and countless others. HTML is here to
             stay.
           </p>
+
+          <p>
+            But you might say, "Plain HTML is too painful! How do you deal with
+            the articles list? How do you manage the archive? Do you really
+            build everything yourself by hand?"
+          </p>
+
+          <p>
+            Well, not really. I want to write content, not maintain boilerplate.
+            I use JavaScript to automate everything that I can. I have a simple
+            Node script that scans my posts directory, extracts metadata from
+            the HTML files themselves, and generates the RSS feed and archive
+            page for me.
+          </p>
+
+          <p>
+            This setup gives me:
+            <ul>
+            <li>Simplicity of creating a post. New HTML file and write.</li>
+            <li>Good user experience because of fast loading times.</li>
+            <li>Minimal cost of maintaining the RSS feed, archive, and posts list.</li>
+          </ul>
+          I hope I convinced you to give it a try.
+          </p>
+          
         </div>
         <footer class="post-footer">
           <a href="../../index.html">← Back to all posts</a>
