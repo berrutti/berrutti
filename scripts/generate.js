@@ -3,6 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import { glob } from 'glob';
+import { parseHTML } from 'linkedom';
 
 const BLOG_CONFIG = {
   title: 'Matias Berrutti',
@@ -14,30 +15,35 @@ const BLOG_CONFIG = {
 
 function extractPostMetadata(filePath) {
   const content = fs.readFileSync(filePath, 'utf8');
-  
-  const titleMatch = content.match(/<title>(.*?) - Matias Berrutti<\/title>/);
-  const title = titleMatch ? titleMatch[1] : 'Untitled';
-  
-  const titleRegex = /<h1 class="post-title">([^<]*)<\/h1>/;
-  const dateRegex = /<time class="post-date" datetime="([^"]*)">/;
-  
-  const titleFromH1 = content.match(titleRegex);
-  const dateFromTime = content.match(dateRegex);
-  
-  if (!titleFromH1 || !dateFromTime) {
-    console.warn(`Could not extract metadata from ${filePath}`);
+  const { document } = parseHTML(content);
+
+  // Extract title from h1 with class "post-title"
+  const titleElement = document.querySelector('h1.post-title');
+  if (!titleElement) {
+    console.warn(`Could not find post title in ${filePath}`);
     return null;
   }
-  
-  const dateStr = dateFromTime[1];
-  const slug = path.basename(filePath, '.html');
-  
-  const descMatch = content.match(/<p>(.*?)<\/p>/);
-  const description = descMatch ? descMatch[1].replace(/<[^>]*>/g, '') : '';
-  
+  const title = titleElement.textContent.trim();
+
+  // Extract date from time element with class "post-date"
+  const timeElement = document.querySelector('time.post-date');
+  if (!timeElement) {
+    console.warn(`Could not find post date in ${filePath}`);
+    return null;
+  }
+  const dateStr = timeElement.getAttribute('datetime');
+  if (!dateStr) {
+    console.warn(`Could not find datetime attribute in ${filePath}`);
+    return null;
+  }
+
+  // Extract description from first paragraph in post-content
+  const firstParagraph = document.querySelector('.post-content p');
+  const description = firstParagraph ? firstParagraph.textContent.trim() : '';
+
   const relativePath = path.relative(process.cwd(), filePath);
   const url = `${BLOG_CONFIG.baseUrl}/${relativePath}`;
-  
+
   return {
     title,
     description,

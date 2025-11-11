@@ -1,18 +1,18 @@
 {
-  "name": "hackers-blog",
+  "name": "berrutti",
   "version": "1.0.0",
-  "description": "A minimal blog built with web components - zero runtime dependencies",
+  "description": "Personal blog",
   "type": "module",
   "private": true,
   "scripts": {
     "dev": "serve . -p 8000",
     "serve": "serve . -p 8000",
     "generate": "node scripts/generate.js",
-    "generate-rss": "node scripts/generate.js",
-    "build": "npm run generate"
+    "build": "yarn generate"
   },
   "devDependencies": {
     "glob": "^10.3.10",
+    "linkedom": "^0.18.12",
     "serve": "^14.2.3"
   },
   "keywords": [
