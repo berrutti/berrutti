@@ -1,4 +1,3 @@
-Hi. I'm Matias.  
-I like coding stuff for fun, such as: [performer](https://github.com/berrutti/performer/) and [beatmatcher](https://github.com/berrutti/beatmatcher/).  
-My work is usually related to music and art. 
-Also tools such as: [bandcamp-utils](https://github.com/berrutti/bandcamp-utils/).
+Hi, I'm Matias, a Senior Software Engineer living in Berlin with 10+ years of experience.  
+
+I build software professionally and for fun, mostly around music, art, and creative tools. Some side projects include [Performer](https://github.com/berrutti/performer/), [Beatmatcher](https://github.com/berrutti/beatmatcher/), and [Bandcamp Utils](https://github.com/berrutti/bandcamp-utils/).  
